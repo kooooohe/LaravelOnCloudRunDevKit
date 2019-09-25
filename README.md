@@ -1,5 +1,5 @@
 # LaravelOnCloudRunDevKit
-This is a kit to deploy and develop Laravel on Cloud run
+This is a kit to deploy and develop Laravel on Cloud Run
 
 # How to run
 
