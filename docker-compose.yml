@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+ composer:
+   image: composer
+   volumes: 
+     - ./app:/app
+   command: [tail, -f, /dev/null]
+ 
+ php:
+   build:
+     context: .
+     dockerfile: Dockerfile-dev
+   volumes: 
+     - ./app/:/var/www/:cached
+     - ./apache-config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+     - ./apache-config/ports.conf:/etc/apache2/ports.conf
+   ports:
+     - 8080:8080
